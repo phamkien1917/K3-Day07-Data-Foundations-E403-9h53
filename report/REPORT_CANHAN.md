@@ -138,14 +138,15 @@ tests/test_solution.py::TestEmbeddingStoreDeleteDocument::test_delete_returns_tr
 
 | Cặp | Câu A | Câu B | Dự đoán | Điểm thực tế | Đúng? |
 |------|-----------|-----------|---------|--------------|-------|
-| 1 | | | cao / thấp | | |
-| 2 | | | cao / thấp | | |
-| 3 | | | cao / thấp | | |
-| 4 | | | cao / thấp | | |
-| 5 | | | cao / thấp | | |
+| 1 | Hạn đăng ký môn học kỳ Hè là ngày nào? | Cho mình hỏi thời hạn đăng ký các môn học hè? | cao | -0.0177 | Sai (với Mock) |
+| 2 | Quy định xin xét duyệt học bổng khuyến khích học tập. | Các tiêu chí để đạt học bổng học tập xuất sắc. | cao | -0.0846 | Sai (với Mock) |
+| 3 | Lịch thi học kỳ 2 năm học 2025-2026. | Thời gian tổ chức các buổi thi cuối kỳ 2. | cao | 0.0727 | Đúng |
+| 4 | Quy định về việc sử dụng phòng máy tính thư viện. | Cách thức đặt món ăn tại nhà ăn sinh viên. | thấp | -0.0035 | Đúng |
+| 5 | Hướng dẫn đăng ký ký túc xá cho tân sinh viên. | Cách thức nộp hồ sơ xin việc tại các công ty CNTT. | thấp | -0.0058 | Đúng |
 
 **Kết quả nào bất ngờ nhất? Điều này nói gì về cách embeddings biểu diễn ý nghĩa?**
-> *Viết 2-3 câu:*
+> Kết quả bất ngờ nhất là các cặp câu 1 và 2 dù có ngữ nghĩa rất tương đồng nhưng điểm cosine similarity với `MockEmbedder` lại ra kết quả âm (gần bằng 0). Điều này cho thấy `MockEmbedder` chỉ tạo véc-tơ xác định dựa trên hàm băm (hash) ký tự phục vụ unit test chứ không học được ngữ nghĩa. Muốn phản ánh đúng quan hệ ngữ nghĩa thực sự giữa các câu trong không gian nhúng, ta bắt buộc phải sử dụng các mô hình embedding chuyên dụng (như `SentenceTransformers` hoặc `OpenAIEmbedder`).
+
 
 ---
 
@@ -172,9 +173,11 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 
 | Tiêu chí | Điểm tự đánh giá |
 |----------|-------------------|
-| Khởi động (Warm-up) | / 5 |
-| Hướng tiếp cận của tôi (My Approach) | / 10 |
-| Hoàn thiện code (Core Implementation — tests) | / 30 |
-| Dự đoán độ tương tự (Similarity Predictions) | / 5 |
+| Khởi động (Warm-up) | 5 / 5 |
+| Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
+| Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
+| Dự đoán độ tương tự (Similarity Predictions) | 5 / 5 |
 | Kết quả truy xuất của tôi (Competition Results) | / 10 |
-| **Tổng phần cá nhân** | **/ 60** |
+| **Tổng phần cá nhân** | **50 / 60** |
+
+
