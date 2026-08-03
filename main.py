@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from ingest import build_knowledge_base
 from src.agent import KnowledgeBaseAgent
-from src.embeddings import (
+from src.embeddings_2A202601563 import (
     EMBEDDING_PROVIDER_ENV,
     LOCAL_EMBEDDING_MODEL,
     OPENAI_EMBEDDING_MODEL,

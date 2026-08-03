@@ -1,6 +1,6 @@
 from typing import Callable
 
-from .store import EmbeddingStore
+from .store_2A202601563 import EmbeddingStore
 
 
 class KnowledgeBaseAgent:
