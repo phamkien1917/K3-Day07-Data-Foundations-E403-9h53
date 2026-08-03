@@ -1,8 +1,10 @@
 # Báo Cáo Nhóm — Lab 7: Embedding & Vector Store
 
-**Nhóm:** [Tên nhóm]
-**Thành viên:** [Họ tên từng thành viên]
-**Ngày:** [Ngày nộp]
+**Nhóm:** 9h53
+**Thành viên:** Phạm Trung Kiên - 2A202601525
+                Vũ Minh Quang - 2A202601515
+                Lương Ngọc Quang - 2A202601563
+**Ngày:** 3/8/2026
 
 > **Nộp 1 bản / nhóm.** Phần cá nhân (hướng tiếp cận, kết quả riêng, dự đoán…) mỗi thành viên nộp riêng trong `REPORT_CANHAN.md`. Chi tiết thang điểm: `docs/SCORING.md`.
 
@@ -60,7 +62,7 @@ Chạy `ChunkingStrategyComparator().compare()` trên 2-3 tài liệu:
 
 > Mỗi thành viên điền một khối dưới đây (copy thêm nếu nhóm có nhiều hơn 3 người).
 
-**Thành viên 1 — [Tên]**
+**Thành viên 1 — []**
 - **Loại chiến lược:** [FixedSize / Sentence / Recursive / custom]
 - **Mô tả & lý do chọn cho chủ đề này:** *(2-3 câu)*
 - **Code snippet (nếu custom):**
