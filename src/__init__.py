@@ -1,12 +1,12 @@
 from .agent import KnowledgeBaseAgent
-from .chunking_2A202601563 import (
+from .chunking import (
     ChunkingStrategyComparator,
     FixedSizeChunker,
     RecursiveChunker,
     SentenceChunker,
     compute_similarity,
 )
-from .embeddings_2A202601563 import (
+from .embeddings import (
     EMBEDDING_PROVIDER_ENV,
     LOCAL_EMBEDDING_MODEL,
     OPENAI_EMBEDDING_MODEL,
@@ -15,7 +15,7 @@ from .embeddings_2A202601563 import (
     OpenAIEmbedder,
     _mock_embed,
 )
-from .models_2A202601563 import Document
+from .models import Document
 from .store_2A202601563 import EmbeddingStore
 
 __all__ = [
