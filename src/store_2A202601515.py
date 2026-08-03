@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import Any, Callable
 
 from .chunking_2A202601515 import _dot
-from .embeddings import _mock_embed
-from .models import Document
+from .embeddings_2A202601515 import _mock_embed
+from .models_2A202601515 import Document
 
 
 class EmbeddingStore:
