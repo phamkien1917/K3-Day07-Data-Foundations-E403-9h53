@@ -15,29 +15,32 @@
 ### Độ tương tự Cosine (Cosine Similarity) (Bài tập 1.1)
 
 **Độ tương tự cosine cao (High cosine similarity) nghĩa là gì?**
-> *Viết 1-2 câu:*
+> Độ tương tự cosine cao (tiệm cận 1.0) nghĩa là hai véc-tơ biểu diễn văn bản hướng về cùng một chiều trong không gian nhúng ngữ nghĩa (embedding space). Điều này thể hiện hai đoạn văn bản có nội dung, ý nghĩa hoặc ngữ cảnh rất tương đồng với nhau, bất kể độ dài ngắn của câu.
 
 **Ví dụ có độ tương tự CAO:**
-- Câu A:
-- Câu B:
-- Tại sao tương đồng:
+- Câu A: "Hạn đăng ký môn học cho học kỳ hè là ngày nào?"
+- Câu B: "Cho mình hỏi thời gian cuối cùng để hoàn tất đăng ký các lớp học hè?"
+- Tại sao tương đồng: Cả hai câu đều dùng các từ ngữ đồng nghĩa và có cùng ý định truy vấn (intent) về mốc thời gian hạn chót đăng ký môn học hè.
 
 **Ví dụ có độ tương tự THẤP:**
-- Câu A:
-- Câu B:
-- Tại sao khác:
+- Câu A: "Quy trình xin xét duyệt học bổng khuyến khích học tập."
+- Câu B: "Thực đơn các món ăn tại nhà ăn sinh viên hôm nay."
+- Tại sao khác: Hai câu thuộc về hai chủ đề hoàn toàn độc lập và không liên quan đến nhau (một bên là chính sách học thuật/học bổng, một bên là đời sống sinh hoạt/ẩm thực).
 
 **Tại sao độ tương tự cosine (cosine similarity) được ưu tiên hơn khoảng cách Euclid (Euclidean distance) cho text embeddings?**
-> *Viết 1-2 câu:*
+> Khoảng cách Euclid bị ảnh hưởng bởi độ lớn (magnitude/độ dài) của véc-tơ, dễ khiến văn bản dài và văn bản ngắn có khoảng cách lớn dù cùng nội dung. Trái lại, Cosine Similarity chỉ đo góc giữa hai véc-tơ (hướng của ý nghĩa), loại bỏ hoàn toàn yếu tố độ dài văn bản, giúp so sánh ngữ nghĩa chính xác hơn giữa các câu/đoạn có độ dài ngắn khác nhau.
 
 ### Bài toán tính toán Chunking (Bài tập 1.2)
 
 **Tài liệu 10,000 ký tự, chunk_size=500, overlap=50. Bao nhiêu chunks?**
-> *Trình bày phép tính:*
-> *Đáp án:*
+> Phép tính:  
+> Bước nhảy giữa các chunk: `step = chunk_size - overlap = 500 - 50 = 450` ký tự.  
+> Công thức tính số chunk: `ceil((độ_dài - overlap) / step) = ceil((10000 - 50) / 450) = ceil(9950 / 450) = ceil(22.111...) = 23`.  
+> Đáp án: **23 chunks**.
 
 **Nếu độ chồng chéo (overlap) tăng lên 100, số lượng chunk thay đổi thế nào? Tại sao muốn độ chồng chéo nhiều hơn?**
-> *Viết 1-2 câu:*
+> Khi overlap tăng lên 100: Bước nhảy `step = 500 - 100 = 400`. Số chunk = `ceil((10000 - 100) / 400) = ceil(9900 / 400) = ceil(24.75) = 25` chunks (tăng thêm 2 chunks).  
+> Lý do muốn độ chồng chéo nhiều hơn: Tăng overlap giúp giữ lại liên kết ngữ cảnh ở ranh giới cắt giữa hai chunk kề nhau, tránh việc các câu hoặc ý nghĩa quan trọng bị xẻ đôi làm mất thông tin khi truy xuất (retrieval).
 
 ---
 
